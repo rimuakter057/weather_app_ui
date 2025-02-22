@@ -16,3 +16,17 @@ subprojects {
 tasks.register("clean", Delete) {
     delete rootProject.buildDir
 }
+
+// ✅ Kotlin Version Update
+buildscript {
+    ext.kotlin_version = '1.9.22' // ✅ এখানে আপডেট করো
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.2.2' // ✅ (এটাও আপডেট করা লাগতে পারে)
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
